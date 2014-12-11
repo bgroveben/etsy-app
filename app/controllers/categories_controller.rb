@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   def index
+    @categories = Category.all
   end
 
   def show
@@ -12,5 +13,11 @@ class CategoriesController < ApplicationController
   end
 
   def delete
+  end
+
+  private
+  ## The strong params method prevents a user from changing the model.
+  def category_params
+    params.require(:category).permit(:name, :thumburl)
   end
 end

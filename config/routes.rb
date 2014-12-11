@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get '/' => 'pages#home'
+
+  resources :categories
+
+  get 'categories/:id/delete' => 'categories#delete', :as => :categories_delete
+
   get 'categories/index'
 
   get 'categories/show'
@@ -10,9 +17,13 @@ Rails.application.routes.draw do
   get 'categories/delete'
 
   root 'pages#home'
+  
   get 'pages/home'
+  
   get 'pages/erb_demo'
+  
   get 'pages/render_demo'
+  
   get 'pages/redirect_demo'
 
   # The priority is based upon order of creation: first created -> highest priority.
