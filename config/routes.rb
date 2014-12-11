@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+
+  get 'categories/show'
+
+  get 'categories/new'
+
+  get 'categories/edit'
+
+  get 'categories/delete'
+
   root 'pages#home'
   get 'pages/home'
   get 'pages/erb_demo'
