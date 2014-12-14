@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'products/index'
+
+  get 'products/show'
+
+  get 'products/new'
+
+  get 'products/edit'
+
+  get 'products/delete'
+
   get '/' => 'pages#home'
 
   resources :categories
