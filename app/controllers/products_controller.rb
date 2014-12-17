@@ -33,8 +33,14 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def delete
-  # end
+  def delete
+    @product = Product.find(params[:id])
+  end
+
+  def destroy
+    Product.find(params[:id]).destroy
+    redirect_to(:action => 'index')
+  end
 
   private
   ## The strong params method prevents a user from changing the model.
